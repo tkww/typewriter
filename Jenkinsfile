@@ -21,7 +21,7 @@ spec:
               branch 'master'
             }
             steps {
-                withCredentials([file(credentialsId:'tkww-npmrc', variable:'NPMRC_LOCATION')]) {
+                withCredentials([file(credentialsId:'ci-npmrc', variable:'NPMRC_LOCATION')]) {
                     container('node') {
                         sh "cp $NPMRC_LOCATION ~/.npmrc"
                         sh "yarn install && yarn run build && npm publish"
