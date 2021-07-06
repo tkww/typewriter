@@ -24,7 +24,7 @@ spec:
                 withCredentials([file(credentialsId:'tkww-npmrc', variable:'NPMRC_LOCATION')]) {
                     container('node') {
                         sh "cp $NPMRC_LOCATION ~/.npmrc"
-                        sh "npm ci && npm run build && npm publish"
+                        sh "npm install && npm run build && npm publish"
                     }
                 }
             }
