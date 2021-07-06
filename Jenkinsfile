@@ -22,7 +22,7 @@ spec:
             }
             steps {
                 withCredentials([file(credentialsId:'tkww-npmrc', variable:'NPMRC_LOCATION')]) {
-                    container('build') {
+                    container('node') {
                         sh "cp $NPMRC_LOCATION ~/.npmrc"
                         sh "npm install && npm run build && npm publish"
                     }
