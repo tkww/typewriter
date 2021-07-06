@@ -1,6 +1,6 @@
 {
   "name": "@tkww/typewriter",
-  "version": "7.4.1",
+  "version": "7.4.1.1",
   "description": "A compiler for generating strongly typed analytics clients via Segment Protocols",
   "repository": "ssh://git@github.com/tkww/typewriter.git",
   "homepage": "https://github.com/tkww/typewriter",
