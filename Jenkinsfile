@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: node
-    image: xogroup/planning-tools:10
+    image: xogroup/registry-nodebox:0.1
     imagePullPolicy: Always
     tty: true
 """
