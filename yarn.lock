@@ -883,7 +883,7 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
 
-"@types/react@^16.8.12", "@types/react@^16.8.6":
+"@types/react@^16.8.12", "@types/react@^16.8.6", "@types/react@^16.9.2":
   "integrity" "sha512-jYP2LWwlh+FTqGd9v7ynUKZzjj98T8x7Yclz479QdRhHfuW9yQ+0jjnD31eXSXutmBpppj5PYNLYLRfnZJvcfg=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-16.9.2.tgz"
   "version" "16.9.2"
