@@ -4,21 +4,21 @@
 
 import Foundation
 
-class {{name}}: TypewriterSerializable {
+public class {{name}}: TypewriterSerializable {
 {{#each properties}}
 {{#if description}}
 /// {{description}}
 {{/if}}
-    var {{name}}: {{type}}{{#isVariableNullable}}?{{/isVariableNullable}}
+    public var {{name}}: {{type}}{{#isVariableNullable}}?{{/isVariableNullable}}
 {{/each}}
 
-    {{functionSignature "init" properties false}} {
+    public {{functionSignature "init" properties false}} {
         {{#each properties}}
         self.{{name}} = {{name}}
         {{/each}}
     }
 
-    func serializableDictionary() -> [String: Any] {
+    public func serializableDictionary() -> [String: Any] {
         {{indent "        " (propertiesDictionary properties "self.")}}
 
         return properties;

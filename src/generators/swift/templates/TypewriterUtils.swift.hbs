@@ -21,8 +21,8 @@ extension Array {
     }
 }
 
-class TypewriterUtils {
-    static func addContextFields(_ options: [String: Any]?) -> [String: Any] {
+public class TypewriterUtils {
+    public static func addContextFields(_ options: [String: Any]?) -> [String: Any] {
         var newOptions = (options ?? [String: Any]()) as [String: Any]
         let originalContext = newOptions["context"] as? [String: Any]
         

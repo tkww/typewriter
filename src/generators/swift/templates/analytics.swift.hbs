@@ -8,19 +8,19 @@ import Segment
 import Analytics
 #endif
 
-class TypewriterAnalytics {
+public class TypewriterAnalytics {
     {{#each tracks}}
     {{#if description}}
     /// {{description}}
     {{/if}}
-    static func {{functionSignature functionName properties false}} {
+    public static func {{functionSignature functionName properties false}} {
         {{functionCall "TypewriterAnalytics" functionName properties "options" "[:]"}}
     }
 
     {{#if functionDescription}}
     /// {{functionDescription}}
     {{/if}}
-    static func {{functionSignature functionName properties true}} {
+    public static func {{functionSignature functionName properties true}} {
         {{indent "        " (propertiesDictionary properties)}}
 
         {{!-- TODO: run-time JSON Schema validation --}}
