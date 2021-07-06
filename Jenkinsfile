@@ -1,4 +1,20 @@
 pipeline {
+    agent {
+        kubernetes {
+            label "typewriter"
+            yaml  """
+kind: Pod
+metadata:
+  name: typewriter
+spec:
+  containers:
+  - name: node
+    image: xogroup/planning-tools:latest
+    imagePullPolicy: Always
+    tty: true
+"""
+        }
+    }
     stages {
         stage('npm Install') {
             steps {
