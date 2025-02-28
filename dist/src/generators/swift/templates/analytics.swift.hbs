@@ -24,7 +24,6 @@ public class TypewriterAnalytics {
         {{indent "        " (propertiesDictionary properties)}}
 
         {{!-- TODO: run-time JSON Schema validation --}}
-
         SegmentAnalytics.updateContextOptions(options)
         Analytics.shared().track(name: "{{rawEventName}}", properties: properties);
     }
