@@ -172,7 +172,8 @@ function defaultPropertyContext(
 
 function generateFunctionSignature(
 	functionName: string,
-	properties: (BasePropertyContext & SwiftPropertyContext)[]
+	properties: (BasePropertyContext & SwiftPropertyContext)[],
+	withOptions: boolean
 ): string {
 	let signature = functionName
 	const parameters: {
@@ -181,7 +182,15 @@ function generateFunctionSignature(
 		isPointerType: boolean
 		isVariableNullable: boolean
 	}[] = [...properties]
-	
+	if (withOptions) {
+		parameters.push({
+			name: 'options',
+			type: '[String: Any]',
+			isPointerType: true,
+			isVariableNullable: true,
+		})
+	}
+
 	const withNullability = (property: {
 		type: string
 		isPointerType: boolean

@@ -137,9 +137,17 @@ function defaultPropertyContext(client, schema, type, namespace, isPointerType) 
     };
 }
 // Handlebars partials
-function generateFunctionSignature(functionName, properties) {
+function generateFunctionSignature(functionName, properties, withOptions) {
     let signature = functionName;
     const parameters = [...properties];
+    if (withOptions) {
+        parameters.push({
+            name: 'options',
+            type: '[String: Any]',
+            isPointerType: true,
+            isVariableNullable: true,
+        });
+    }
     const withNullability = (property) => {
         const { type, isVariableNullable } = property;
         if (isVariableNullable) {
