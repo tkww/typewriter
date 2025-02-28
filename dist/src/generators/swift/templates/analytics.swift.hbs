@@ -26,7 +26,7 @@ public class TypewriterAnalytics {
         {{!-- TODO: run-time JSON Schema validation --}}
 
         SegmentAnalytics.updateContextOptions(options)
-        Analytics.shared().track("{{rawEventName}}", properties: properties);
+        Analytics.shared().track(name: "{{rawEventName}}", properties: properties);
     }
 
     {{/each}}
